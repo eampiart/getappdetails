@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>iTunes Store Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="search">
+            <input type="text" id="searchBox">
+            <span id="hint">If search is not returning the correct element, refine search term.</span>
+        </div>
+        <div id="results" class="clearfix"></div>
+        <div id="jsonView"></div>
+    </div>
+    <!--  jQuery, JS  -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="app.js"></script>
+</body>
+<footer>
+    <span>All information is owned by Apple. This site uses the <a href="https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api">iTunes Search API</a>.</span>
+</footer>
+</html>
