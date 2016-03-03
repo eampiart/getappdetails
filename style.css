@@ -9,7 +9,7 @@
 }
 
 .search {
-    margin: 50px auto;
+    margin: 50px auto 5% auto;
 }
 
 #searchBox {
@@ -52,12 +52,6 @@ div#appDetails {
 }
 
 .appName {
-    /*padding-left: 10px;*/
-    /*display: inline-block;*/
-    display: inline-block;
-}
-
-.appName {
     color: black;
 }
 
@@ -94,6 +88,7 @@ a>.appName:hover {
 
 #jsonView p {
     padding: 20px;
+    overflow-x: hidden;
 }
 
 footer {
@@ -112,4 +107,14 @@ footer:hover {
    display: block;
    height: 0;
    clear: both;
+}
+
+@media all and (max-width: 800px) {
+    .appName {
+        font-size: 0.9em;
+    }
+
+    #jsonView p {
+        font-size: 0.8em;
+    }
 }
