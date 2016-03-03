@@ -54,7 +54,12 @@ function handleSearchResults (searchResults) {
     appJSON.artworkUrl100 = app.artworkUrl100;
     appJSON.artworkUrl512 = app.artworkUrl512;
     appJSON.formattedPrice = app.formattedPrice;
-    appJSON.description = "<--FILL IN-->";
+    appJSON.currentVersionReleaseDate = app.currentVersionReleaseDate;
+    appJSON.description = app.description;
+    appJSON.primaryGenreName = app.primaryGenreName;
+    appJSON.screenshotUrls = app.screenshotUrls;
+    appJSON.version = app.version;
+    appJSON.ownDescription = "<--FILL IN-->";
     $('#jsonView').append("<p>"+JSON.stringify(appJSON) + "</p>");
     $('#jsonView').show()
 }
