@@ -33,7 +33,7 @@ function handleSearchResults (searchResults) {
 
     var resultsHTML = '';
     $.each(searchResults, function() {
-        resultsHTML += '<img class="appIcon" src="' + this.artworkUrl100 + '">';
+        resultsHTML += '<img class="appIcon" src="' + this.artworkUrl512 + '">';
         resultsHTML += '<div id="appDetails"><a class="appName" href="' + this.trackViewUrl + '">';
         resultsHTML += '<span class="appName">' + this.trackName + '</span></a>';
         resultsHTML += '<a href="' + this.trackViewUrl + '">';
