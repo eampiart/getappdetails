@@ -1,3 +1,5 @@
+var appJSON = {};
+
 $(document).ready(function () {
     clearResults(); // make sure that there is nothing in the results div
 
@@ -44,13 +46,21 @@ function handleSearchResults (searchResults) {
 
     /* ------------ Create JSON string for first result ONLY */
     var app = searchResults[0];
-    var appJSONObject = "{\"trackName\" : \"" + app.trackName + "\",\"trackId\" : " + app.trackId + ",\"trackViewUrl\" : \"" + app.trackViewUrl + "\",\"artworkUrl60\" : \"" + app.artworkUrl60 + "\",\"artworkUrl100\" : \"" + app.artworkUrl100 + "\",\"artworkUrl512\" : \"" + app.artworkUrl512 + "\",\"formattedPrice\" : \"" + app.formattedPrice + "\",\"description\" : \"<--FILL IN -->\"}";
-    // add JSON string to DOM and reveal the corresponding div
-    $('#jsonView').append("<p>"+appJSONObject + "</p>");
+    console.log(app);
+    appJSON.trackName = app.trackName;
+    appJSON.artistName = app.artistName;
+    appJSON.trackId = app.trackId;
+    appJSON.artworkUrl60 = app.artworkUrl60;
+    appJSON.artworkUrl100 = app.artworkUrl100;
+    appJSON.artworkUrl512 = app.artworkUrl512;
+    appJSON.formattedPrice = app.formattedPrice;
+    appJSON.description = "<--FILL IN-->";
+    $('#jsonView').append("<p>"+JSON.stringify(appJSON) + "</p>");
     $('#jsonView').show()
 }
 
 function clearResults () {
     $('#results').html('');
     $('#jsonView').html('').hide();
+    appJSON = {};
 }
