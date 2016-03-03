@@ -62,19 +62,7 @@ a>.appName:hover {
 }
 
 .appPrice {
-    border: 1px solid black;
-    display: inline-block;
-    color: black;
-    padding: 3px 8px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 0.7em;
     float: right;
-    opacity: 0.4;
-}
-
-.appPrice:hover {
-    opacity: 0.9;
 }
 
 
@@ -93,10 +81,44 @@ a>.appName:hover {
     overflow-x: hidden;
 }
 
+#btns {
+    display: none;
+    width: 200px;
+    margin: 20px auto;
+}
+
+#btns .btn {
+    width: 80px;
+}
+
+.btn {
+    border: 1px solid black;
+    color: black;
+    padding: 3px 8px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.7em;
+    opacity: 0.4;
+    /*margin: 5px;*/
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+#copyJSON {
+    float: left;
+}
+
+#showJSON {
+    float: right;
+}
+
 footer {
     font-size: 8px;
     opacity: 0.5;
     text-align: center;
+    margin-top: 100px;
 }
 
 footer:hover {

@@ -1,6 +1,16 @@
 var appJSON = {};
 
 $(document).ready(function () {
+    var clipboard = new Clipboard('#copyJSON');
+    clipboard.on('success', function() {
+        $('#copyJSON').html("Copied!");
+    });
+
+    $('#showJSON').on('click', function () {
+        $('#jsonView').toggle()
+    });
+
+
     clearResults(); // make sure that there is nothing in the results div
 
     //when the input changes (ex. on enter), initiate a search for the given term
@@ -39,7 +49,7 @@ function handleSearchResults (searchResults) {
         resultsHTML += '<div id="appDetails"><a class="appName" href="' + this.trackViewUrl + '">';
         resultsHTML += '<span class="appName">' + this.trackName + '</span></a>';
         resultsHTML += '<a href="' + this.trackViewUrl + '">';
-        resultsHTML += '<span class="appPrice">' + this.formattedPrice + '</span></a></div>';
+        resultsHTML += '<span class="btn appPrice">' + this.formattedPrice + '</span></a></div>';
     });
     $('#results').append(resultsHTML); // show search results
     $('span.appName').closest('a').css('text-decoration','none'); //remove link styling
@@ -61,11 +71,14 @@ function handleSearchResults (searchResults) {
     appJSON.version = app.version;
     appJSON.ownDescription = "<--FILL IN-->";
     $('#jsonView').append("<p>"+JSON.stringify(appJSON) + "</p>");
-    $('#jsonView').show()
+    $('#copyJSON').attr("data-clipboard-text",JSON.stringify(appJSON));
+    $('#copyJSON').html("Copy JSON")
+    $('#btns').show()
 }
 
 function clearResults () {
     $('#results').html('');
     $('#jsonView').html('').hide();
     appJSON = {};
+    $('#btns').hide()
 }
